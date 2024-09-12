@@ -45,7 +45,7 @@ partial struct EnemySpawnJob : IJobEntity
 {
     public Random random;
     
-    private void Execute(ref LocalTransform transform)
+    private void Execute(in EnemyTag enemy, ref LocalTransform transform)
     {
         transform.Position = new float3(random.NextFloat(9, 25), random.NextFloat(-4.5f, 4.5f), 0);
     }

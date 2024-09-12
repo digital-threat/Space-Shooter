@@ -13,22 +13,17 @@ public class EnemyAuthoring : MonoBehaviour
             
             var cpMovementSpeed = new MovementSpeed
             {
-                speed = authoring.speed
+                value = authoring.speed
             };
             AddComponent(entity, cpMovementSpeed);
 
-            // var cpEnemy = new Enemy();
-            // AddComponent(entity, cpEnemy);
-            //
+            var cpEnemy = new EnemyTag();
+            AddComponent(entity, cpEnemy);
+            
             var cpLifetime = new Lifetime();
             AddComponent(entity, cpLifetime);
         }
     }
-}
-
-public struct MovementSpeed : IComponentData
-{
-    public float speed;
 }
 
 public struct Lifetime : IComponentData, IEnableableComponent
