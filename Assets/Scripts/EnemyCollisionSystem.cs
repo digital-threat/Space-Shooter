@@ -16,7 +16,7 @@ public partial struct EnemyCollisionSystem : ISystem
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
-        // There's no 2D physics for entities and I didn't want to spend hours on this, hence this naive n^2 loop.
+        // There's no 2D physics for entities and I didn't want to spend hours on this, hence this naive double loop.
         // I'm hoping the compiler will at least auto-vectorize it.
         // Looked at the assembly in Burst inspector but I can't tell what's happening in there because it's all code gen.
 
