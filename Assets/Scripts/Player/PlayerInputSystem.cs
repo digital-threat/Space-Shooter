@@ -10,12 +10,11 @@ public partial class PlayerInputSystem : SystemBase
     private Entity player;
 
     [BurstCompile]
-    public void OnCreate(ref SystemState state)
+    protected override void OnCreate()
     {
-        state.RequireForUpdate<PlayerTag>();
-        state.RequireForUpdate<PlayerMoveInput>();
+        RequireForUpdate<PlayerTag>();
+        RequireForUpdate<PlayerMoveInput>();
     }
-    
     
     protected override void OnStartRunning()
     {

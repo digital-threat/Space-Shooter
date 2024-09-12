@@ -10,9 +10,6 @@ namespace Projectile
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            var entityQuery = SystemAPI.QueryBuilder().WithDisabled<Lifetime>().Build();
-            state.EntityManager.DestroyEntity(entityQuery);
-            
             var job = new ProjectileMoveJob
             {
                 deltaTime = SystemAPI.Time.DeltaTime
